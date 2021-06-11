@@ -1,0 +1,159 @@
+.social-icon a.fa {
+    padding: 7px;
+    font-size: 20px;
+    width: 39px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 50%;
+  }
+
+  .social-icon a.fa:hover {
+    opacity: 0.7;
+  }
+
+  .fa-facebook {
+    background: #3B5998;
+    color: white;
+  }
+
+  .fa-twitter {
+    background: #55ACEE;
+    color: white;
+  }
+
+  .fa-linkedin {
+    background: #007bb5;
+    color: white;
+  }
+
+  li:hover {
+    background-image: linear-gradient(to right, #202060, #7d2ea5, #171752c5);
+    box-shadow: 1px 1px 2px 2px rgb(196, 227, 230);
+  }
+
+  .btnHover:hover {
+    background-image: linear-gradient(to right, #202060, #4c2c5c, #171752c5);
+    box-shadow: 1px 1px 2px 2px rgb(196, 227, 230);
+  }
+
+  .btn:hover {
+    color: white;
+  }
+
+  li a:hover {
+    color: white !important;
+
+  }
+
+  .footer {
+    background-image: linear-gradient(to right, #202040, #b030b0, #202060, #602080);
+  }
+
+  .quiz-area {
+    background-image: url("../img/quiz_bg.png");
+    height: 500px!important;
+    /* You must set a specified height */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+  }
+
+  .meanu-area {
+    background-image: url("../img/meanub.png");
+    /* You must set a specified height */
+    background-position: center;
+    height: 600px;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+  }
+
+  .top-area {
+    background-image: url("../img/3.png");
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
+  }
+
+  .select-area {
+    padding-top: 100px !important;
+  }
+  .play-area{
+    background-image: linear-gradient(to right, #202040, #b030b0, #202060, #602080);
+    box-shadow: 1px 1px 2px 2px rgb(219, 177, 228);
+    border:double;
+  }
+  /*for rabbin*/
+  .ribbon {
+    width: 312px;
+    height: 70px;
+    position: relative;
+    float: left;
+    margin-bottom: 30px;
+    background-image: url("../img/3.png");
+    box-shadow: 1px 1px 1px 1px rgb(219, 177, 228);
+    background-size: cover;
+    text-transform: uppercase;
+    color: white;
+}
+@media (max-width: 500px) {
+.ribbon {
+  width: 100%;
+}
+.ribbon:nth-child(even) {
+  margin-right: 0%;
+}
+}
+
+.ribbon3 {
+  font-size:50px;
+  
+  line-height: 38px;
+  
+  position: absolute;
+  left: -10px;
+  top: 7px;
+  background: #13254d;
+}
+.ribbon3:before, .ribbon3:after {
+content: "";
+position: absolute;
+}
+.ribbon3:before {
+
+height: 0;
+width: 0;
+top: -8.5px;
+left: 0.1px;
+border-bottom: 9px solid black;
+border-left: 9px solid transparent;
+}
+.ribbon3:after {
+height: 0;
+  width: 0;
+  top: 0px;
+  right: -35.8px;
+  border-top: 28px solid transparent;
+  border-bottom: 26px solid transparent;
+  border-left: 36px solid #10294b;
+}
+
+
+.buttons button {
+    height: 40px;
+    width: 200px !important;
+    margin: 2px;
+  }
+
+  #quiz {
+    display: none;
+  }

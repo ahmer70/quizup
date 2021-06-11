@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+{% load static %}
+
+<!-- <link type="text/css" href="{% static 'quiz/index.css' %}" rel="stylesheet" > -->
+<link rel="stylesheet" href="{% static 'quiz/index2.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<div class="area col-8 mx-auto text-white">
+    <p></p>all_question
+    {% for item in records %}
+    {{item.question_id}}
+    {% endfor %}
+    
+    {{user.id}}
+
+
+    <!-- {{show_presentation_list}} -->
+    {{menus_presentation}}
+    {{correct_answer}}
+    <!-- <p>total likeq  {{total}}</p>
+        {% for quiza in userdatq %}
+        <p>user:            {{quiza.user_id}}</p>
+        <p>Question:            {{quiza.question_id}}</p>
+        <p>Correct:            {{quiza.correct}}</p>
+        <p>Wrong:            {{quiza.wrong}}</p>
+        
+        {% endfor %} -->
+    <div class="text-white">
+        <div id='counter'>0</div>
+        <div id='customers'>customers</div>
+    </div>
+    
+    <!-- {% for userp in userl %}
+                        {% if user.id == userp.user_p.id %}
+                            <h3 class="quiz_title">user points {{ userp.user_points }}</h3>
+                            <p> user p{{ userp.user_p.id}}</p>
+                            <p> user m{{ user.id}}</p>
+                        {% endif %}  
+                        </a>
+
+                    {% endfor %} -->
+    <div class="top_container">
+
+    </div>
+
+    {% if all_quiz_list %}
+
+    <section class="card_container">
+
+        {% for quiz in all_quiz_list %}
+        <a class="card" href="{% url 'quiz:single_quiz' quiz.id %}">
+            <h3 class="quiz_title">{{ quiz.quiz_title }}</h3>
+            <h6 class="num_questions">{{ quiz.num_questions }} Questions</h6>
+        </a>
+
+        {% endfor %}
+    </section>
+
+
+
+    {% else %}
+    <p>No quizzes are available.</p>
+    {% endif %}
+
+    <br>
+    <br>
+    <br>
+
+</div>
+
+
+
+
+{% endblock %}

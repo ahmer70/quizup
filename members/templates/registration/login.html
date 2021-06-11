@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Login</h1>
+
+
+<div class="form-group col-8 m-auto text-white" >
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit ">Login</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<div class="text-white">
+	<table class="table">
+		<thead class="table-light">
+			<tr class="text-dark">
+				<th scope="col">#</th>
+				<th scope="col">Username:</th>
+				<th scope="col">Email</th>
+				<th scope="col">Points</th>
+				<th scope="col">Points</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			{% for object in object_list %}
+			<tr class="text-white ">
+				<th scope="row">{{object.id}}</th>
+				<td>{{ object.username }}</td>
+				<td>{{ object.email }}</td>
+				<td class="table-primary " ><a href="{{object.id}}/update/" >update</a></td>
+				<td class="table-danger"><a href="{{object.id}}/delete/">Delete</a></td>
+				<td class="table-info"><a href="{{object.id}}">Detail View</a></td>
+				{% empty %}
+	<td>No objects yet.</td>
+	{% endfor %}
+			</tr>
+		</tbody>
+	</table>
+</div>
+{% endblock  %}

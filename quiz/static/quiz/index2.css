@@ -1,0 +1,143 @@
+/* background for whole page */
+
+  
+  .top_container {
+      text-align: center;
+      margin:10px;
+      border-radius: 30px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+  }
+  
+ 
+  .create_quiz {
+      position: relative;
+      z-index: 4;
+      background-color: #61bf8a;
+      background-color: #2d9058;
+      text-decoration: none;
+      color: white;
+      font-family: Roboto;
+      font-size: 30px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 20px;
+      padding-right: 20px;
+      border-radius: 50px;
+  }
+  
+  .create_quiz:hover {
+      background-color: #2d9058;
+      color: white;
+      border: 2px solid white;
+  }
+  
+  .create_quiz:focus {
+      background-color: white;
+      color: black;
+  }
+  
+  .card_container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      grid-gap: 2rem;
+      padding: 1rem;
+  }
+  
+  .card {
+      background-color: #232323;
+      text-align: center;
+      padding-bottom: 20px;
+      border: 3px solid white;
+      border-radius: 33px;
+      text-decoration:none;
+      z-index: 100;
+      box-shadow: 7px 7px 20px black;
+  }
+  
+  .card:hover {
+      background-color: #1a1a1a;
+      cursor: pointer;
+      border: 3px solid #61bf8a;
+  }
+  
+  /* Styles submit button when clicked */
+  .card:focus {
+      background-color: 1a1a1a;
+      color: black;
+      cursor: pointer;
+      border: 10px solid white;
+      border-radius: 40px;
+  
+  }
+  
+  
+  
+  .quiz_title {
+      color: white;
+      font-family: Roboto;
+      font-size: 30px;
+      background-color: #3b3b3b;
+      margin-top: 0px;
+      border-radius: 30px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+  }
+  
+  .num_questions {
+      color: white;
+      font-family: Roboto;
+      font-size: 40px;
+     
+  }
+  
+  
+  
+  /* -------------------- */
+  /* Floating Blocks Styling Below */
+  
+  *{
+      margin: 0px;
+      padding: 0px;
+  }
+  
+  .context {
+      width: 100%;
+      position: fixed;
+      top:50vh;
+  
+  }
+  
+  .context h1{
+      text-align: center;
+      color: #fff;
+      font-size: 30px;
+  }
+  
+  
+  .area{
+      
+      width: 100%;
+      height:100vh;
+      z-index: 0;
+  
+  }
+  
+  
+  
+  @keyframes animate {
+  
+      0%{
+          transform: translateY(0) rotate(0deg);
+          opacity: 1;
+          border-radius: 0;
+      }
+  
+      100%{
+          transform: translateY(-1000px) rotate(720deg);
+          opacity: 0;
+          border-radius: 50%;
+      }
+  
+  }
+  

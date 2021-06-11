@@ -1,0 +1,53 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<div class="text-white">
+    <table class="table">
+        <thead class="table-light">
+            <tr class="text-dark">
+                <th scope="col">Q:id</th>
+                <th scope="col">Q:NO:</th>
+                <th scope="col">Question.id</th>
+                <th scope="col">Question</th>
+                <th scope="col">Options</th>
+                <th scope="col">Points</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for quiz in question %}
+            <tr class="text-white">
+                <th scope="row">{{ quiz.quiz.id }}</th>
+                <td>{{ quiz.question_num }}</td>
+                <td>{{quiz.id}}</td>
+                <td>{{ quiz.question_text }}</td>
+
+
+                <td>
+
+                    <div class="text-white">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Options
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                {% for forms in form %}
+                                {% if quiz.id == forms.question.id%}
+                                <a class="dropdown-item p-2" href="#">{{forms.choice_text}}</a>
+                                {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </td>
+                <td><a href="{% url 'question_update' quiz.id %}">Update</a></td>
+                <td><a href="{% url 'delete_question' quiz.id %}">Delete</a></td>
+                <td><a href="{% url 'add_more' quiz.quiz.id   %}">add_more</a></td>
+                <td><a href="{{quiz.id}}/option/">option</a></td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+    {% endblock %}

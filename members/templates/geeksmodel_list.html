@@ -1,0 +1,16 @@
+<ul>
+	<!-- Iterate over object_list -->
+	{% for object in object_list %}
+	<!-- Display Objects -->
+	<li>{{ object.username }}</li>
+	<li>{{ object.id }}</li>
+	<li>{{ object.first_name }}</li>
+	<li>{{ object.last_name }}</li>
+<li>	<a href="{{object.id}}/delete/">Delete</a></li>
+<li>	<a href="{{object.id}}/update/">update</a></li>
+	<hr/>
+	<!-- If objet_list is empty -->
+	{% empty %}
+	<li>No objects yet.</li>
+	{% endfor %}
+</ul>

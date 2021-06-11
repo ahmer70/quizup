@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+
+            <!--Grid column-->
+            <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12 mx-auto">
+
+                <h2 class="h1-responsive font-weight-bold  mb-0 ">Got a Question?</h2>
+                <!--Section description-->
+                <p class=" w-responsive mx-auto mt-0 ">Is there something you can’t find an answer to or do you have something else you need help with? Let us know by filling out the form below!</p>
+
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12  ">
+                        <form id="contact-form" class="contact-form" name="contact-form" method="POST">
+
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name" name="fname" class="form-control">
+                                        <label for="name" class="">First name</label>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name" name="lname" class="form-control">
+                                        <label for="name" class="">Last name</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="name" name="mobile" class="form-control">
+                                        <label for="name" class="">Contact Number</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                                    <div class="md-form mb-0">
+                                        <input type="text" id="email" name="email" class="form-control">
+                                        <label for="email" class="">Your email</label>
+                                    </div>
+                                </div>
+                                <!--Grid column-->
+
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="md-form mb-0">
+                                        <textarea type="text" id="subject" name="subject" rows="2" class="form-control   md-textarea"></textarea>
+                                        <label for="subject" class="">Subject</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--Grid row-->
+
+                            <!--Grid row-->
+                            <div class="row">
+
+                                <!--Grid column-->
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                                    <div class="md-form">
+                                        <textarea type="text" id="message" name="message" rows="2" class="form-control   md-textarea"></textarea>
+                                        <label for="message">Your message</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Grid row-->
+                            <input type="submit" class="btn" name="register" value="Send Email" />
+                        </form>
+
+                        <div class="status"></div>
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+            </div>
+        
+   
+    
+    {% endblock %}

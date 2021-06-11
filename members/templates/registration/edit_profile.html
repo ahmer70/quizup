@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Edit Setting</h1>
+<div class="form-group col-8 m-auto">
+<form  method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Edit</button>
+</form></div>
+{% endblock %}

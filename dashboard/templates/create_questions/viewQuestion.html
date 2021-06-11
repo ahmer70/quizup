@@ -1,0 +1,47 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+
+
+{% load static %}
+
+<!-- <link type="text/css" href="{% static 'quiz/index.css' %}" rel="stylesheet" > -->
+<link rel="stylesheet" href="{% static 'quiz/index2.css' %}">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+<div class="area col-8 mx-auto text-white">
+
+    <div class="top_container">
+
+        <a class="create_quiz" href="{% url 'create_quiz' %}">CREATE QUIZ </a>
+    </div>
+
+   
+
+    {% if all_quiz_list %}
+    {% for quiz in all_quiz_list %}
+    <div class="card m-2" style="width: 18rem; ">
+        
+        <div class="card-body">
+          <h5 class="card-title">{{ quiz.quiz_title }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{ quiz.num_questions }} Questions</h6>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="{% url 'questionList_update' quiz.id %}" class="card-link btn btn-primary">Update</a>
+          <a href="{% url 'openQuestion' quiz.id %}" class="card-link btn btn-primary">View List</a>
+        </div>
+      </div>
+      {% endfor %}
+
+    {% else %}
+    <p>No quizzes are available.</p>
+    {% endif %}
+
+    
+
+</div>
+
+
+
+
+{% endblock %}

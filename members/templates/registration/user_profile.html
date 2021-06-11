@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<h1>User Profile</h1>
+
+
+<div class="card col-8 mx-auto bg-dark text-white" >
+   <div class="row p-2">
+    <div class="col-xl-3  ">
+        {% if page_user.profile_pic %}
+        <img src="{{ page_user.profile_pic.url }}" class="card-img-top rounded-circle "  alt="..." style="width: 13rem;height: 15rem;">
+        {% else %}
+        <img src="{% static 'images/pic.png' %}" class="card-img-top rounded-circle "  alt="..." style="width: 13rem;height: 15rem;" >
+        {% endif %}
+    </div>
+        <div class="col-xl-9">
+    <div class="card-body">
+      <h5 class="card-title text-capitalize ">Name: &nbsp; {{ page_user.user.first_name }} {{ page_user.user.last_name }}</h5>
+      <p class="card-text">Email: &nbsp; {{ page_user.user.email }}</p>
+   
+      <hr>
+      <p class="card-text"> BIO &nbsp; {{ page_user.bio }}</p>
+      <p class="card-text text-capitalize"> Country &nbsp; {{ page_user.country }}</p>
+      <hr>
+      <div class="d-flex justify-content-around">
+        <p class="card-text"> Points: &nbsp;{{points_user.user_points}} </p>
+        <p class="card-text"> Level: &nbsp; </p>
+      </div>
+      
+      <a href="{% url 'edit_profile' %}" class="btn btn-primary ">Setting</a>
+      <a href="{% url 'edit_profile_page' user.profile.id %}" class="btn btn-primary ">Edit Profile</a>
+    
+   
+    </div>
+</div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1 class="text-white">Registrations</h1>
+<div class="col-8 mx-auto text-white">
+  <form method="post">
+    {% csrf_token %}
+    {{form.non_filed_errors}}
+    {% for field in form %}
+    <div class="col">
+      {{ field.label_tag }} - {{ field }}
+    </div>
+    {% for error in field.errors %}
+    <div class="alert alert-danger m-0 p-0" role="alert">
+      {{ field.errors | striptags }}
+    </div>
+    {% endfor %}
+    {% endfor %}
+    <button type="submit">Register</button>
+  </form>
+</div>
+
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'adminbase.html' %}
+{% block content %}
+<div class="text-white">
+	<table class="table">
+		<thead class="thead-white">
+			<tr class="text-white">
+				<th scope="col">#</th>
+				<th scope="col">userid</th>
+				<th scope="col">category:</th>
+				<th scope="col">correct</th>
+				<th scope="col">Total Correct</th>
+				
+				<th scope="col">Total Wrong</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+			{% for object in object_list %}
+			<tr class="text-white">
+				<th scope="row">{{object.user_id}}</th>
+				
+				<td>{{ object.user_id.id }}</td>
+				<td>{{ object.q_category.id }}</td>
+				<td class="alert alert-danger" role="alert"><a href="{{object.id}}/update/">update</a></td>
+				<td class="alert alert-success" role="alert"><a href="{{object.id}}/delete/">Delete</a></td>
+				<td class="alert alert-success" role="alert"><a href="{{object.id}}">Detail View</a></td>
+				{% empty %}
+	<td>No objects yet.</td>
+	{% endfor %}
+			</tr>
+		</tbody>
+	</table>
+	{% for quizi in  quiz %}
+	{% for object in object_list %}
+	{% if quizi.id == object.q_category.id  %}
+		{{quizi.quiz_title }}
+	{% endif %}
+	  
+	  {% endfor %}
+	
+	{% endfor %}
+
+	<div class="text-white">
+		<td>Correct {{total_correct  }}</td>
+		<td>Wrong {{total_wrong}}</td>
+		
+		{% for point in  points %}
+		<td>Points {{point.user_points}}</td>
+	{% endfor %}
+	</div>
+
+	
+</div>
+{% endblock  %}

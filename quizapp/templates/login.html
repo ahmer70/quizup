@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/js/fontawesome.min.js"></script>  
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>login</title>
+{% load static %}
+	<style type="text/css">
+* {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+}
+
+.top{
+	height: 100%;
+	width: 100%;
+	background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("{% static 'img/bg.png' %}");
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+}
+.top-now{
+	width: 380px;
+	height: 520px;
+	position: relative;
+	margin: 6% auto;
+	background-color: rgba(0,0,0,0.5);
+	padding: 5px;
+	overflow: hidden;
+}
+.top-up{
+	width: 220px;
+	margin: 35px auto;
+	position: relative;
+	box-shadow: 0 0 20px 9px #ff61241f;
+	border-radius: 30px;
+}
+.btn{
+	padding: 10px 30px;
+	cursor: pointer;
+	background: transparent;
+	border: 0;
+	outline: none;
+	position: relative;
+	color: white;
+}
+#btn1 {
+	top: 0;
+	left: 0;
+	position:absolute;
+	width:110px;
+	height:100%;
+	background: linear-gradient(to right, #ff105f,#1b2353);
+	border-radius:30px;
+	transition: 0.5s;
+
+}
+.s1{
+	margin: 30px auto;
+	text-align: center;
+}
+
+.form{
+	color: white;
+	top: 180px;
+	position: absolute;
+	width: 280px;
+	transition: 0.5s;
+}
+.input{
+	width: 100%;
+	padding: 10px 0;
+	margin: 5px 0;
+	border-left: 0;
+	border-top: 0;
+	border-right: 0;
+	border-bottom: 1px solid #999;
+	outline: none;
+	color: white;
+	background: transparent;
+}
+.submit{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin:auto;
+	background:linear-gradient(to right, #ff105f,#1b2353);
+	border:0;
+	outline: none;
+	border-radius: 30px;
+    color: white;
+}
+.checkbox{
+	margin: 30px 10px 30px 0;
+}
+span{
+	color: #777;
+	font-size: 12px;
+	bottom: 68px;
+	position: absolute;
+}
+#login{
+	left:50px;
+
+}
+#signup{
+left: 450px;
+}
+
+.social-icon a.fa {
+  padding: 7px;
+    font-size: 20px;
+    width: 39px;
+    text-align: center;
+    text-decoration: none;
+    margin: 2px 2px;
+    border-radius: 50%;
+}
+.social-icon a.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #e28052;
+  color: rgb(255, 255, 255);
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+	<div class="top-now">
+		<div class="top-up d-flex">
+			<div id="btn1"></div>
+			<button type="button" class="btn" onclick="login()"> LOGIN</button>
+			<button type="button" class="btn" onclick="signup()"> SIGNUP</button>
+		</div>
+	
+        <div class="col btnHover  s1 py-2 social-icon ">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-google"></a>
+          </div>
+	<form id="login" class="form">
+		<input type="text" class="input"  placeholder="Your ID" required>
+		<input type="text" class="input" placeholder="Enter Password" required>
+		<input type="checkbox" class="checkbox"><span> Remember Password</span>
+		<button type="submit" class="submit"> LogIn</button>
+	</form>
+
+	<form id="signup"  class="form">
+		<input type="text" class="input" placeholder="Full Name" required>
+		<input type="email" class="input" placeholder="Email ID" required>
+		<input type="text" class="input" placeholder="Password" required>
+		<input type="text" class="input" placeholder="Confirm Password" required>
+		<input type="checkbox" class="checkbox"><span> I agree to the terms and Conditions</span>
+		<button type="submit" class="submit"> SignUp</button>
+	</form>
+
+
+
+</div>
+
+</div>
+<script type="text/javascript">
+	var x = document.getElementById("login")
+	var y = document.getElementById("signup")
+	var z = document.getElementById("btn1")
+	function signup(){
+		x.style.left= "-400px";
+		y.style.left= "50px";
+		z.style.left= "110px";
+	}
+
+	function login(){
+		x.style.left= "50px";
+		y.style.left= "450px";
+		z.style.left= "0";
+	}
+</script>
+
+</body>
+</html>

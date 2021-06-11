@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block page_title %}{% endblock %}</title>
+
+
+    <!-- add below Django command to use bootstrap3 in web page.  -->
+
+
+    <!-- first load django static tag. -->
+    {% load static %}
+ 
+    <!-- use django static tag ton load js file and css file. -->
+    <link rel="stylesheet" href="{% static 'css/index2.css' %}">
+
+    
+
+</head>
+    <body>
+
+        <div class="container">
+
+            <!-- include web page navigation bar page -->
+           
+
+
+            {% block page_content %}
+            <div class="hello"><h1>hello</h1></div>
+            {% endblock %}
+
+        </div>
+    </body>
+</html>
